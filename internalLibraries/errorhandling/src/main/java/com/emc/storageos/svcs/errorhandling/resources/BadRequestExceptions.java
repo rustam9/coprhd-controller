@@ -2326,8 +2326,23 @@ public interface BadRequestExceptions {
     public BadRequestException maxFullCopySessionLimitExceeded(final URI volume, final int maxStillAllowed);
     
     @DeclareServiceCode(ServiceCode.API_BAD_REQUEST)
-    public BadRequestException fullCopyNotSupportedByBackendSystem(final URI volume);            
-
+    public BadRequestException fullCopyNotSupportedByBackendSystem(final URI volume);
+    
+    @DeclareServiceCode(ServiceCode.API_AUTH_KEYSTONE_PROVIDER_CREATE_NOT_ALLOWED)
+    public BadRequestException keystoneProviderAlreadyPresent();
+    
+    @DeclareServiceCode(ServiceCode.API_PARAMETER_INVALID)
+    public BadRequestException managerDNMustcontainUserNameAndTenantName();
+    
+    @DeclareServiceCode(ServiceCode.API_PARAMETER_INVALID)
+    public BadRequestException managerDNMustcontainEqualTo();
+    
+    @DeclareServiceCode(ServiceCode.API_PARAMETER_INVALID)
+    public BadRequestException managerDNInvalid();
+    
+    @DeclareServiceCode(ServiceCode.API_PARAMETER_INVALID)
+    public BadRequestException projectWithTagNonexistent(final String openstackTenantId);
+    
     @DeclareServiceCode(ServiceCode.API_BAD_REQUEST)
     public BadRequestException NoAuthnProviderFound(String userId);
 

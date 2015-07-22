@@ -21,6 +21,7 @@ addProjects(
         "exportLibraries/hds",
         "exportLibraries/compute",
         "exportLibraries/cinder",
+		"exportLibraries/keystone",
         "exportLibraries/scaleio",
         "exportLibraries/xtremio",
         "geodbsvc",

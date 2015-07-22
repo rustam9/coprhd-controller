@@ -15,9 +15,11 @@ import javax.xml.bind.annotation.XmlElement;
 public abstract class AuthnProviderBaseParam {
 
     /**
-     * The kind of provider.  Active Directory(ad) or generic LDAPv3 (ldap)
+     * The kind of provider.  Active Directory(ad) or generic LDAPv3 (ldap) or
+     * keystone provider.
      * @valid ad
      * @valid ldap
+     * @valid keystone
      */
     private String mode;
 
@@ -185,7 +187,7 @@ public abstract class AuthnProviderBaseParam {
         this.managerPassword = managerPassword;
     }
 
-    @XmlElement(name = "search_base")
+    @XmlElement(name = "search_base", required = false, nillable = true)
     @JsonProperty("search_base")
     public String getSearchBase() {
         return searchBase;
@@ -195,7 +197,7 @@ public abstract class AuthnProviderBaseParam {
         this.searchBase = searchBase;
     }
 
-    @XmlElement(name = "search_filter")
+    @XmlElement(name = "search_filter", required = false, nillable = true)
     @JsonProperty("search_filter")
     public String getSearchFilter() {
         return searchFilter;

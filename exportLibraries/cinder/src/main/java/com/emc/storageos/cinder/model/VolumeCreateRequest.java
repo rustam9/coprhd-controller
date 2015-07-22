@@ -14,6 +14,8 @@
  */
 package com.emc.storageos.cinder.model;
 
+import java.util.Map;
+
 public class VolumeCreateRequest {
 	
 	/**
@@ -38,19 +40,22 @@ public class VolumeCreateRequest {
 	public Volume volume = new Volume();	
 	public class Volume
 	{
+		public String status;
 		public String availability_zone;
 		public String source_volid;
-		public String display_description;
+		public String description;
 		public String snapshot_id;
+		public String consistencygroup_id;
+		public String source_replica;
+		public String user_id;
 		public long size;
-		public String display_name;
+		public String name;
 		public String imageRef;
+		public String attach_status;
 		public String volume_type;
-		public Metadata metadata = new Metadata();
+		public String project_id;
+		public Map<String, String> metadata;
 	}
 	
-	public class Metadata {
-		
-	}
 
 }

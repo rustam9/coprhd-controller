@@ -14,6 +14,7 @@
  */
 package com.emc.storageos.cinder.model;
 
+import java.util.Map;
 
 public class SnapshotCreateRequest {
 	
@@ -25,6 +26,9 @@ public class SnapshotCreateRequest {
         	"description": "Daily backup",
         	"volume_id": "5aa119a8-d25b-45a7-8d1b-88e127885635",
         	"force": true
+                "metadata":{
+ 
+      			}
      		}
 		}
 	 */
@@ -35,6 +39,7 @@ public class SnapshotCreateRequest {
 		public String description;
 		public String volume_id;
 		public boolean force;
+		public Map<String, String> metadata;
 	}
 
 }
